@@ -8,11 +8,6 @@
   <meta content="" name="description">
   <meta content="" name="keywords">
 
-  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<!-- <script type="text/javascript">
-    emailjs.init("t5LDUOr_c7e981xmv");  Replace with your User ID
-</script> -->
-
 
   <!-- Favicons -->
   <link href="assets/img/hero-bg.jpg" rel="icon">
@@ -788,73 +783,39 @@
             </div>
           </div>
 
-          <div class="col-lg-7 contact-form">
+          <div class="col-lg-7">
            <form action="" method="post" class="form-send" data-aos="fade-up" data-aos-delay="200">
 
-    <input type="hidden" name="_captcha" value="false">
-   <input type="hidden" name="_subject" value="New Message From Contact Form!">
-   <input type="hidden" name="_template" value="table">
+   
    <div class="row gy-4"> 
+    <form action="submit.php" method="post">
+      <div class="col-md-6">
+        <label for="name-field" class="pb-2">Your Name</label>
+        <input type="text" name="name" id="name" class="form-control" required="">
+      </div>
+ 
+      <div class="col-md-6">
+        <label for="email-field" class="pb-2">Your Email</label>
+        <input type="email" class="form-control" name="email"  id="email" required="">
+      </div>
+ 
+      <div class="col-md-12">
+        <label for="subject-field" class="pb-2">Subject</label>
+        <input type="text" class="form-control" name="subject" id="subject" required="">
+      </div>
+ 
+      <div class="col-md-12">
+        <label for="message-field" class="pb-2">Message</label>
+        <textarea class="form-control" name="message" rows="10" id="message" required=""></textarea>
+      </div>
+ 
+       <div class="col-md-12 mt-3 text-center">
+      
+ 
+        <button type="submit">Send Message</button> 
+    </form>
 
-
-
-     <div class="col-md-6">
-       <label for="name-field" class="pb-2">Your Name</label>
-       <input type="text" name="name" id="name" class="form-control" required="">
-     </div>
-
-     <div class="col-md-6">
-       <label for="email-field" class="pb-2">Your Email</label>
-       <input type="email" class="form-control" name="email"  id="email" required="">
-     </div>
-
-     <div class="col-md-12">
-       <label for="subject-field" class="pb-2">Subject</label>
-       <input type="text" class="form-control" name="subject" id="subject" required="">
-     </div>
-
-     <div class="col-md-12">
-       <label for="message-field" class="pb-2">Message</label>
-       <textarea class="form-control" name="message" rows="10" id="message" required=""></textarea>
-     </div>
-
-      <div class="col-md-12 mt-3 text-center">
-     
-
-       <button type="submit" onclick="sendEmail()">Send Message</button> 
-
-       <script>
-
-document.addEventListener("DOMContentLoaded", function() {
-            // Initialize EmailJS here
-            emailjs("t5LDUOr_c7e981xmv"); // Replace with your actual User ID from EmailJS
-        });
-
-
-        function sendEmail() {
-
-          console.log("Button clicked - sendEmail function triggered");
-    console.log("EmailJS object:", emailjs); // Check if emailjs is still defined here
-
-    if (typeof emailjs === "undefined") {
-        console.error("EmailJS library not available when sendEmail was called.");
-        return;
-    }
-            emailjs.send("service_pzpid8s", "template_e7ecb4i", {
-                from_name: document.getElementById("name").value,
-                reply_to: document.getElementById("email").value,
-                subject: document.getElementById("subject").value,
-                message: document.getElementById("message").value,
-            }, "t5LDUOr_c7e981xmv")
-            .then((response) => {
-                console.log("SUCCESS!", response.status, response.text);
-                alert("Message sent successfully!");
-            }, (error) => {
-                console.log("FAILED...", error);
-                alert("Failed to send message. Please try again.");
-            });
-        }
-    </script>
+      
     
           </div><!-- End Contact Form -->
 
@@ -865,42 +826,8 @@ document.addEventListener("DOMContentLoaded", function() {
     </section><!-- /Contact Section -->
 
   </main>
-/*
-  <!-- <form action="https://formsubmit.co/charlesdima0000@gmail.com" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
 
-    <input type="hidden" name="_captcha" value="false">
-   <input type="hidden" name="_subject" value="New Message From Contact Form!">
-   <input type="hidden" name="_template" value="table">
-   <div class="row gy-4"> 
-
-
-
-     <div class="col-md-6">
-       <label for="name-field" class="pb-2">Your Name</label>
-       <input type="text" name="name" id="name-field" class="form-control" required="">
-     </div>
-
-     <div class="col-md-6">
-       <label for="email-field" class="pb-2">Your Email</label>
-       <input type="email" class="form-control" name="email" id="email-field" required="">
-     </div>
-
-     <div class="col-md-12">
-       <label for="subject-field" class="pb-2">Subject</label>
-       <input type="text" class="form-control" name="subject" id="subject-field" required="">
-     </div>
-
-     <div class="col-md-12">
-       <label for="message-field" class="pb-2">Message</label>
-       <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
-     </div>
-
-      <div class="col-md-12 mt-3 text-center">
-        <div class="loading">Loading</div>
-       <div class="error-message"></div>
-       <div class="sent-message">Your message has been sent. Thank you!</div> 
-
-       <button type="submit">Send Message</button> -->
+  
        
 
   <footer id="footer" class="footer position-relative light-background">
@@ -940,16 +867,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-
-  <!-- EmailJS -->
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
-  <script>
-    (function(){
-      emailjs.init("t5LDUOr_c7e981xmv"); // Replace with your EmailJS User ID
-    })();
-  </script>
-  
-
 </body>
 
 </html>
