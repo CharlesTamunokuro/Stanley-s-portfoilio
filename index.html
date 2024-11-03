@@ -8,6 +8,12 @@
   <meta content="" name="description">
   <meta content="" name="keywords">
 
+  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<!-- <script type="text/javascript">
+    emailjs.init("t5LDUOr_c7e981xmv");  Replace with your User ID
+</script> -->
+
+
   <!-- Favicons -->
   <link href="assets/img/hero-bg.jpg" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -49,7 +55,7 @@
       <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
       <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
       <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-      <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>
+      <!-- <a href="#" class="google-plus"><i class="bi bi-skype"></i></a> -->
       <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
     </div>
 
@@ -133,7 +139,7 @@
               </div>
               <div class="col-lg-6">
                 <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>30</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>22</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>State Of Origin:</strong> <span></span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>adinnustanley7@gmail.com</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
@@ -227,9 +233,9 @@
             </div><!-- End Skills Item -->
 
             <div class="progress">
-              <span class="skill"><span>Software Installation &amp; IT Setup</span> <i class="val">80%</i></span>
+              <span class="skill"><span>Software Installation &amp; IT Setup</span> <i class="val">100%</i></span>
               <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div><!-- End Skills Item -->
 
@@ -238,9 +244,9 @@
           <div class="col-lg-6">
 
             <div class="progress">
-              <span class="skill"><span>Network Administration</span> <i class="val">80%</i></span>
+              <span class="skill"><span>Network Administration</span> <i class="val">100%</i></span>
               <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div><!-- End Skills Item -->
 
@@ -252,9 +258,9 @@
             </div><!-- End Skills Item -->
 
             <div class="progress">
-              <span class="skill"><span>Microsoft Office Suite</span> <i class="val">55%</i></span>
+              <span class="skill"><span>Microsoft Office Suite</span> <i class="val">90%</i></span>
               <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div><!-- End Skills Item -->
 
@@ -782,45 +788,74 @@
             </div>
           </div>
 
-          <div class="col-lg-7">
-            <form action="formsubmit.co/adinnustanley7@gmail.com" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-7 contact-form">
+           <form action="" method="post" class="form-send" data-aos="fade-up" data-aos-delay="200">
 
-              <input type="hidden" name="_captcha" value="false">
-              <input type="hidden" name="_subject" value="New Message From Contact Form!">
-              <div class="row gy-4">
+    <input type="hidden" name="_captcha" value="false">
+   <input type="hidden" name="_subject" value="New Message From Contact Form!">
+   <input type="hidden" name="_template" value="table">
+   <div class="row gy-4"> 
 
 
 
-                <div class="col-md-6">
-                  <label for="name-field" class="pb-2">Your Name</label>
-                  <input type="text" name="name" id="name-field" class="form-control" required="">
-                </div>
+     <div class="col-md-6">
+       <label for="name-field" class="pb-2">Your Name</label>
+       <input type="text" name="name" id="name" class="form-control" required="">
+     </div>
 
-                <div class="col-md-6">
-                  <label for="email-field" class="pb-2">Your Email</label>
-                  <input type="email" class="form-control" name="email" id="email-field" required="">
-                </div>
+     <div class="col-md-6">
+       <label for="email-field" class="pb-2">Your Email</label>
+       <input type="email" class="form-control" name="email"  id="email" required="">
+     </div>
 
-                <div class="col-md-12">
-                  <label for="subject-field" class="pb-2">Subject</label>
-                  <input type="text" class="form-control" name="subject" id="subject-field" required="">
-                </div>
+     <div class="col-md-12">
+       <label for="subject-field" class="pb-2">Subject</label>
+       <input type="text" class="form-control" name="subject" id="subject" required="">
+     </div>
 
-                <div class="col-md-12">
-                  <label for="message-field" class="pb-2">Message</label>
-                  <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
-                </div>
+     <div class="col-md-12">
+       <label for="message-field" class="pb-2">Message</label>
+       <textarea class="form-control" name="message" rows="10" id="message" required=""></textarea>
+     </div>
 
-                 <div class="col-md-12 text-center">
-                  <!-- <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div> -->
+      <div class="col-md-12 mt-3 text-center">
+     
 
-                  <button type="submit">Send Message</button>
-                </div>
+       <button type="submit" onclick="sendEmail()">Send Message</button> 
 
-              </div>
-            </form>
+       <script>
+
+document.addEventListener("DOMContentLoaded", function() {
+            // Initialize EmailJS here
+            emailjs("t5LDUOr_c7e981xmv"); // Replace with your actual User ID from EmailJS
+        });
+
+
+        function sendEmail() {
+
+          console.log("Button clicked - sendEmail function triggered");
+    console.log("EmailJS object:", emailjs); // Check if emailjs is still defined here
+
+    if (typeof emailjs === "undefined") {
+        console.error("EmailJS library not available when sendEmail was called.");
+        return;
+    }
+            emailjs.send("service_pzpid8s", "template_e7ecb4i", {
+                from_name: document.getElementById("name").value,
+                reply_to: document.getElementById("email").value,
+                subject: document.getElementById("subject").value,
+                message: document.getElementById("message").value,
+            }, "t5LDUOr_c7e981xmv")
+            .then((response) => {
+                console.log("SUCCESS!", response.status, response.text);
+                alert("Message sent successfully!");
+            }, (error) => {
+                console.log("FAILED...", error);
+                alert("Failed to send message. Please try again.");
+            });
+        }
+    </script>
+    
           </div><!-- End Contact Form -->
 
         </div>
@@ -830,6 +865,43 @@
     </section><!-- /Contact Section -->
 
   </main>
+/*
+  <!-- <form action="https://formsubmit.co/charlesdima0000@gmail.com" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+
+    <input type="hidden" name="_captcha" value="false">
+   <input type="hidden" name="_subject" value="New Message From Contact Form!">
+   <input type="hidden" name="_template" value="table">
+   <div class="row gy-4"> 
+
+
+
+     <div class="col-md-6">
+       <label for="name-field" class="pb-2">Your Name</label>
+       <input type="text" name="name" id="name-field" class="form-control" required="">
+     </div>
+
+     <div class="col-md-6">
+       <label for="email-field" class="pb-2">Your Email</label>
+       <input type="email" class="form-control" name="email" id="email-field" required="">
+     </div>
+
+     <div class="col-md-12">
+       <label for="subject-field" class="pb-2">Subject</label>
+       <input type="text" class="form-control" name="subject" id="subject-field" required="">
+     </div>
+
+     <div class="col-md-12">
+       <label for="message-field" class="pb-2">Message</label>
+       <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
+     </div>
+
+      <div class="col-md-12 mt-3 text-center">
+        <div class="loading">Loading</div>
+       <div class="error-message"></div>
+       <div class="sent-message">Your message has been sent. Thank you!</div> 
+
+       <button type="submit">Send Message</button> -->
+       
 
   <footer id="footer" class="footer position-relative light-background">
 
@@ -868,6 +940,15 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("t5LDUOr_c7e981xmv"); // Replace with your EmailJS User ID
+    })();
+  </script>
+  
 
 </body>
 

@@ -1,41 +1,30 @@
 <?php
-  /**
-  * Requires the "PHP Email Form" library
-  * The "PHP Email Form" library is available only in the pro version of the template
-  * The library should be uploaded to: vendor/php-email-form/php-email-form.php
-  * For more info and help: https://bootstrapmade.com/php-email-form/
-  */
+ 
+ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+  $name = htmlspecialchars(trim( $_POST['name']) , ENT_QUOTES, 'UTF-8');
+  $email = htmlspecialchars(trim( $_POST['email']) , FILTER_SANITIZE_EMAIL );
+  $subject = htmlspecialchars(trim( $_POST['subject']) , ENT_QUOTES, 'UTF-8');
+  $message = htmlspecialchars(trim( $_POST['message']) , ENT_QUOTES, 'UTF-8');
 
-  // Replace contact@example.com with your real receiving email address
-  $receiving_email_address = 'contact@example.com';
+  $to = "charlesdima0000@gmail.com";
+  $headers = "From: $email\r\n";
+  $headers .= "Reply-To: $email\r\n";
+  $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 
-  if( file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php' )) {
-    include( $php_email_form );
-  } else {
-    die( 'Unable to load the "PHP Email Form" Library!');
-  }
+  $email_subject = $subject;
+  $email_body = "<p><strong>Name:</strong>{$name}</p>";
+  $email_body = "<p><strong>Email:</strong>{$email}</p>";
+  $email_body = "<p><strong>Subject:</strong>{$subject}</p>";
+  $email_body = "<p><strong>Message:</strong><br>" . nl2br($message) . "</p>";
 
-  $contact = new PHP_Email_Form;
-  $contact->ajax = true;
-  
-  $contact->to = $receiving_email_address;
-  $contact->from_name = $_POST['name'];
-  $contact->from_email = $_POST['email'];
-  $contact->subject = $_POST['subject'];
+  if (mail($to, $subject, $message, $email_body, $headers)){
+    echo "<p> Thank You, $name! Your message has been sent successfully.</p>";
+ }else{
+  echo "<p>Oops! Something went wrong, and we couldn't send your message. Please Refresh This Page and try again.</p>";
+ }
+}else{
+  echo "<p>Invalid request</p>";
+}
+ 
 
-  // Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
-  /*
-  $contact->smtp = array(
-    'host' => 'example.com',
-    'username' => 'example',
-    'password' => 'pass',
-    'port' => '587'
-  );
-  */
-
-  $contact->add_message( $_POST['name'], 'From');
-  $contact->add_message( $_POST['email'], 'Email');
-  $contact->add_message( $_POST['message'], 'Message', 10);
-
-  echo $contact->send();
-?>
+ ?>
